@@ -1,0 +1,20 @@
+﻿@model lista.Models.ListaModel
+
+@{
+    ViewData["Title"] = "Excluir Lista";
+}
+
+<h1>Excluir Lista</h1>
+
+<h3>Tem certeza que deseja excluir esta lista?</h3>
+<div>
+    <h4>@Model.Nome</h4>
+    <p>@Model.Descricao</p>
+    <p>Data de Criação: @Model.DataCriacao.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
